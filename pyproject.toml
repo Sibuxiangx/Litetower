@@ -1,0 +1,51 @@
+[project]
+name = "litetower"
+version = "0.1.0"
+description = "QQ Official Bot SDK powered by Letoderea"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.13"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Framework :: AsyncIO",
+    "Typing :: Typed",
+]
+dependencies = [
+    "arclet-letoderea @ git+https://github.com/ArcletProject/Letoderea.git",
+    "launart>=0.8.2",
+    "pydantic>=2.0",
+    "httpx>=0.28.1",
+    "uvicorn>=0.32.0",
+    "starlette>=0.45.0",
+    "cryptography>=43.0.3",
+    "rich>=13.0",
+    "aiofiles>=24.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/sibuxiangx/Litetower"
+Repository = "https://github.com/sibuxiangx/Litetower"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/litetower"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.408",
+]
+
+[tool.pyright]
+pythonVersion = "3.13"
+typeCheckingMode = "basic"
+pythonPlatform = "All"
+venvPath = "."
+venv = ".venv"
